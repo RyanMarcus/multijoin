@@ -1,5 +1,7 @@
 # multijoin
 
+`npm install -g multijoin`
+
 Using BSD (or UNIX) `join` command to merge multiple CSV files together based on their first column.
 
 `file1`:

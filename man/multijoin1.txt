@@ -1,0 +1,21 @@
+NAME
+  multijoin -- joins multiple CSV files together by their first column 
+
+SYNOPSIS
+  multijoin file1 file2 file3...
+
+DESCRIPTION
+  The multijoin(1) command uses the system's join utility to combine many CSV
+  files by joining them on their first column.
+
+
+AUTHOR
+  multijoin was written by Ryan Marcus <ryan@rmarcus.info>.
+
+RESOURCES
+  See the GitHub page: <https://github.com/RyanMarcus/multijoin>
+
+COPYING
+  Copyright (C) 2016 Ryan Marcus. Free use of this software is
+  granted under the terms of the GNU General Public License (GPLv3).
+

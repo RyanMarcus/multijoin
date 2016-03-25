@@ -35,9 +35,9 @@ Using BSD (or UNIX) `join` command to merge multiple CSV files together based on
 `multijoin file1 file2 file3`:
 
 ```
-1,g,a,d
-2,h,b,e
-3,i,c,f
+1,a,d,g
+2,b,e,h
+3,c,f,i
 ```
 
 

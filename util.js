@@ -31,12 +31,6 @@ Array.prototype.last = function() {
 module.exports.pipeProcesses = pipeProcesses;
 function pipeProcesses(processes) {
     processes.for2Grams((p1, p2) => {
-	p1.stdout.on('data', (buf) => {
-	    p2.stdin.write(buf);
-	});
-	
-	p1.on('close', () => {
-	    p2.stdin.end();
-	});
+	p1.stdout.pipe(p2.stdin);
     });
 }

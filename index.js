@@ -22,6 +22,7 @@ const process = require('process');
 
 
 
+
 const files = process.argv.slice(2);
 
 if (files.length < 2) {
@@ -29,4 +30,7 @@ if (files.length < 2) {
     process.exit(0);
 }
 
-join.joinFiles(files, (buf) => process.stdout.write(buf));
+
+
+join.joinFiles(files).pipe(process.stdout);
+

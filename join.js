@@ -22,22 +22,17 @@ const q = require("q");
 
 
 module.exports.joinFiles = joinFiles;
-function joinFiles(files, cb, done) {
+function joinFiles(files) {
     // spawn files.length - 1 join commamds...
     let joins = [];
 
     joins.push(makeJoin(files.shift(), files.shift()));
-    joins = joins.concat(files.map(makeJoin));
+    joins = joins.concat(files.map((i) => makeJoin(i)));
 
+    
     util.pipeProcesses(joins);
-
-
-    joins.last().stdout.on('data', (buf) => {
-	cb(buf);
-    });
-
-    if (done)
-	joins.last().on('close', () => { done(); });
+    
+    return joins.last().stdout;
 }
 
 module.exports.joinFilesToString = joinFilesToString;
@@ -53,7 +48,10 @@ function joinFilesToString(files) {
 	toR.resolve(buf);
     }
     
-    joinFiles(files, aggro, done);
+    let out = joinFiles(files);
+
+    out.on('data', aggro);
+    out.on('end', done);
     
 
     return toR.promise;
@@ -61,5 +59,9 @@ function joinFilesToString(files) {
 
 
 function makeJoin(file, file2) {
-    return spawn('join', ['-t', ',', file, (file2 ? file2 : "-")]);
+    let args = ['-t', ',', file, (file2 ? file2 : "-")];
+    let toR = spawn('join', args);
+  
+
+    return toR;
 }

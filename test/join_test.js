@@ -21,6 +21,13 @@ const join = require("../join.js").joinFilesToString;
 
 
 describe("join", () => {
+
+    it("should join four example files", (done) => {
+	join(["test/file1", "test/file2", "test/file3", "test/file1"]).then((r) => {
+	    assert.equal(r, "1,a,g,a,d\n2,b,h,b,e\n3,c,i,c,f\n");
+	}).then(done).catch(err => done(err));
+    });
+    
     it("should join the three example files", (done) => {
 	join(["test/file1", "test/file2", "test/file3"]).then((r) => {
 	    assert.equal(r, "1,g,a,d\n2,h,b,e\n3,i,c,f\n");

@@ -1,6 +1,6 @@
 {
     "name": "multijoin",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Join multiple CSV files by their first column using join command-line program",
     "main": "index.js",
     "scripts": {
@@ -9,7 +9,6 @@
     "author": "Ryan Marcus <ryan@rmarcus.info>",
     "license": "GPL-3.0",
     "dependencies": {
-	"commander": "^2.9.0",
 	"q": "^1.4.1"
     },
     "bin": {

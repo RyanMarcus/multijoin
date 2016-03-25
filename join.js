@@ -23,10 +23,16 @@ const q = require("q");
 
 module.exports.joinFiles = joinFiles;
 function joinFiles(files) {
+    files.unshift(files.pop());
+    files.unshift(files.pop());
+    
     // spawn files.length - 1 join commamds...
     let joins = [];
 
+
+    
     joins.push(makeJoin(files.shift(), files.shift()));
+    files.reverse();
     joins = joins.concat(files.map((i) => makeJoin(i)));
 
     

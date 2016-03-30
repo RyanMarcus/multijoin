@@ -1,43 +1,39 @@
 {
-    "name": "multijoin",
-    "version": "0.1.5",
-    "description": "Join multiple CSV files by their first column using join command-line program",
-    "main": "index.js",
-    "engines": { "node": ">=5.0.0" },
-    "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Ryan Marcus <ryan@rmarcus.info>",
-    "license": "GPL-3.0",
-    "dependencies": {
-	"q": "^1.4.1"
-    },
-    "bin": {
-	"multijoin": "index.js"
-    },
-    "devDependencies": {
-	"mocha": "^2.4.5",
-	"coveralls": "^2.11.6"
-
-    },
-    "directories": {
-	"man": "man",
-	"test": "test"
-    },
-    "scripts": {
-	"test": "node_modules/mocha/bin/mocha",
-	"report": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-	
-    },
-    "repository": {
-	"type": "git",
-	"url": "git+https://github.com/RyanMarcus/multijoin.git"
-    },
-    "bugs": {
-	"url": "https://github.com/RyanMarcus/multijoin/issues"
-    },
-    "homepage": "https://github.com/RyanMarcus/multijoin#readme",
-    "man": [
-	"./man/multijoin.1"
-    ]
+  "name": "multijoin",
+  "version": "0.1.5",
+  "description": "Join multiple CSV files by their first column using join command-line program",
+  "main": "index.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha",
+    "report": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/.bin/codecov -t $CODECOV"
+  },
+  "author": "Ryan Marcus <ryan@rmarcus.info>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "q": "^1.4.1"
+  },
+  "bin": {
+    "multijoin": "index.js"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "directories": {
+    "man": "man",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanMarcus/multijoin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RyanMarcus/multijoin/issues"
+  },
+  "homepage": "https://github.com/RyanMarcus/multijoin#readme",
+  "man": [
+    "./man/multijoin.1"
+  ]
 }

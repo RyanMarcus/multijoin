@@ -1,8 +1,11 @@
 {
     "name": "multijoin",
-    "version": "0.0.5",
+    "version": "0.1.5",
     "description": "Join multiple CSV files by their first column using join command-line program",
     "main": "index.js",
+    "engines": {
+	{ "node": ">=5.0.0" }
+    },
     "scripts": {
 	"test": "echo \"Error: no test specified\" && exit 1"
     },

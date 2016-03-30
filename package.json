@@ -15,14 +15,18 @@
 	"multijoin": "index.js"
     },
     "devDependencies": {
-	"mocha": "^2.4.5"
+	"mocha": "^2.4.5",
+	"coveralls": "^2.11.6"
+
     },
     "directories": {
 	"man": "man",
 	"test": "test"
     },
     "scripts": {
-	"test": "node_modules/mocha/bin/mocha"
+	"test": "node_modules/mocha/bin/mocha",
+	"report": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+	
     },
     "repository": {
 	"type": "git",

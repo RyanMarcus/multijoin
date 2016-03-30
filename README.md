@@ -1,6 +1,7 @@
 # multijoin
 
-[ ![Codeship Status for RyanMarcus/multijoin](https://codeship.com/projects/b7678bc0-d45a-0133-c638-0af10aec3b5e/status?branch=master)](https://codeship.com/projects/142411)
+[ ![Codeship Status for RyanMarcus/multijoin](https://codeship.com/projects/b7678bc0-d45a-0133-c638-0af10aec3b5e/status?branch=master)](https://codeship.com/projects/142411) [![codecov.io](https://codecov.io/github/RyanMarcus/multijoin/coverage.svg?branch=master)](https://codecov.io/github/RyanMarcus/multijoin?branch=master)
+
 
 
 `npm install -g multijoin`
